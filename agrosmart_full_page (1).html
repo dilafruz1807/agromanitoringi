@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgroSmart Full Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section with Animated Waves */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 200px;
+      z-index: 2;
+    }
+    .wave1, .wave2, .wave3 {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      height: 100%;
+    }
+    .wave1 {
+      animation: waveMove1 8s ease-in-out infinite, waveFloat1 4s ease-in-out infinite;
+      z-index: 3;
+      opacity: 0.6;
+    }
+    .wave2 {
+      animation: waveMove2 12s ease-in-out infinite, waveFloat2 6s ease-in-out infinite;
+      z-index: 4;
+      opacity: 0.4;
+    }
+    .wave3 {
+      animation: waveMove3 16s ease-in-out infinite, waveFloat3 5s ease-in-out infinite;
+      z-index: 5;
+      opacity: 0.2;
+    }
+    @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes waveMove2 { 0% { transform: translateX(0); } 100% { transform: translateX(-30%); } }
+    @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(-20%); } }
+    @keyframes waveFloat1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes waveFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes waveFloat3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    /* Stats Section */
+    section.stats {
+      background-color: #f7f7fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section.stats h5 {
+      text-transform: uppercase;
+      color: #555;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    section.stats p {
+      font-size: 24px;
+      color: #1a1a2e;
+      margin: 10px 0 40px;
+    }
+    .divider-bar {
+      height: 5px;
+      background-color: #1a1a2e;
+      margin: 0 auto;
+      width: 90%;
+      position: relative;
+    }
+    .divider-bar span {
+      position: absolute;
+      height: 20px;
+      width: 5px;
+      background-color: #1a1a2e;
+      top: -7.5px;
+    }
+    .divider-bar span:nth-child(1) { left: 0%; }
+    .divider-bar span:nth-child(2) { left: 25%; }
+    .divider-bar span:nth-child(3) { left: 50%; }
+    .divider-bar span:nth-child(4) { left: 75%; }
+    .divider-bar span:nth-child(5) { right: 0; }
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+    .stats-item {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px;
+    }
+    .stats-item h2 {
+      font-size: 36px;
+      color: #1a1a2e;
+      margin: 0;
+    }
+    .stats-item p {
+      margin: 5px 0;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll('.count');
+    const speed = 200;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+
+      updateCount();
+    });
+  });
+</script>
+
+</body>
+</html>
