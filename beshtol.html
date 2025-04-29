@@ -6,199 +6,270 @@
     <title>Beshtol Qishlog‘i - Uylar Tahlili</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-            /* Umumiy */
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    }
-    body {
-    background: #f5f5f5;
-    color: #333;
-    }
-    nav {
-    background: #2E7D32;
-    padding: 15px;
-    }
-    nav ul {
-    display: flex;
-    justify-content: center;
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+        body {
+        display: flex;
+        background: #f5f5f5;
+        color: #333;
+        }
+        .sidebar {
+        position: fixed; /* Panelni qotirib qo‘yadi */
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100vh; /* Ekran balandligi */
+        background-color: #1b421e;
+        color: white;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+        /* Sidebar asosiy dizayn */
+
+
+/* Menyu ichki ul */
+    .sidebar nav ul {
     list-style: none;
-    gap: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     }
-    nav ul li a {
+
+/* Har bir menyu elementi */
+    .sidebar nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    background-color: transparent;
+    border-radius: 12px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
-    }
-    nav ul li a:hover {
-    color: #A5D6A7;
-    }
-    section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-    }
-    h1 {
-    color: #2E7D32;
-    margin-bottom: 20px;
+    font-weight: 500;
+    transition: background 0.3s ease;
     }
 
-    /* Mahalla ro'yxati */
-    .kochalar-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    }
-    .kocha-btn {
-    background: #388E3C;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-    }
-    .kocha-btn:hover {
-    background: #1B5E20;
+    /* Hover va active effekt */
+    .sidebar nav ul li a:hover,
+    .sidebar nav ul li a.active {
+    background-color: #2e7d32;
     }
 
-    /* Uylar ro'yxati */
-    .uylar-container {
-    margin-top: 20px;
-    }
-    .uy-btn {
-    background: #E8F5E9;
-    border: 1px solid #C8E6C9;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: inline-block;
-    transition: background 0.3s;
-    }
-    .uy-btn:hover {
-    background: #C8E6C9;
-    }
-
-    /* Katta uy card */
-    .uy-card {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-    background: white;
+        .main-content {
+        margin-left: 300px; /* sidebar kengligi bilan bir xil bo‘lishi kerak */
+        padding: 40px;
+        display: flex;        
+        flex-direction: column;
+        gap: 50px;
+}
+        section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+        }
+        h1 {
+        color: #2E7D32;
+        margin-bottom: 20px;
+        }
+         /* Kartaga o‘xshagan yumshoq blok */
+    .info-card {
+    background-color: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .uy-info {
-    flex: 1;
-    }
-    .uy-slider {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-    }
-    .uy-slider img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 100%;
-    transition: left 0.5s ease;
-    }
-    .uy-slider img.active {
-    left: 0;
-    }
-    .slider-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 8px;
-    }
-    .slider-buttons button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: none;
-    background: #ccc;
-    cursor: pointer;
-    }
-    .slider-buttons button.active {
-    background: #2E7D32;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    width: 800px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
     }
 
-    /* Diagramma */
-    .charts {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    }
-    .charts canvas {
-    max-width: 250px;
-    max-height: 250px; /* Bu eng muhimi */
-    height: auto;
-    aspect-ratio: 1/1; /* Kvadrat shaklga majbur qiladi */
-    display: block;
-    margin: auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    /* Sarlavha */
+    .info-card h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2e7d32;
     }
 
+    /* Matn */
+    .info-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    }
+
+    /* Animatsiya */
+    @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+        /* Mahalla ro'yxati */
+        .kochalar-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    
+        }
+        .kocha-btn {
+        background: #388E3C;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        }
+        .kocha-btn:hover {
+        background: #1B5E20;
+        }
+
+        /* Uylar ro'yxati */
+        .uylar-container {
+        margin-top: 20px;
+        }
+        .uy-btn {
+        background: #E8F5E9;
+        border: 1px solid #C8E6C9;
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-block;
+        transition: background 0.3s;
+        }
+        .uy-btn:hover {
+        background: #C8E6C9;
+        }
+
+        /* Katta uy card */
+        .uy-card {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .uy-info {
+        flex: 1;
+        }
+        .uy-slider {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        }
+        .uy-slider img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 100%;
+        transition: left 0.5s ease;
+        }
+        .uy-slider img.active {
+        left: 0;
+        }
+        .slider-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 8px;
+        }
+        .slider-buttons button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background: #ccc;
+        cursor: pointer;
+        }
+        .slider-buttons button.active {
+        background: #2E7D32;
+        }
+
+        /* Diagramma */
+        .charts {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        }
+        .charts canvas {
+        max-width: 250px;
+        max-height: 250px; /* Bu eng muhimi */
+        height: auto;
+        aspect-ratio: 1/1; /* Kvadrat shaklga majbur qiladi */
+        display: block;
+        margin: auto;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    
+}
     </style>
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="#qishloq">Qishloq haqida</a></li>
-        <li><a href="#kochalar">Ko‘chalar</a></li>
-        <li><a href="#statistika">Statistika</a></li>
-    </ul>
-</nav>
-
-<section id="qishloq">
-    <h1>Beshtol Qishlog‘i haqida</h1>
-    <p><strong>Joylashuvi:</strong> Samarqand viloyati, Paxtachi tumani</p>
-    <p><strong>Umumiy maydon:</strong> 1500 gektar</p>
-    <p><strong>Fermerlar soni:</strong> 10 ta</p>
-    <p><strong>Xonadonlar soni:</strong> 20 ta</p>
-</section>
-
-<!-- Ko‘chalar -->
-<section id="kochalar">
-    <h1>Mahallalar</h1>
-    <div class="kochalar-container" id="kochalarContainer"></div>
-
-    <!-- Uylar ro‘yxati chiqadigan joy -->
-    <div id="uylarContainer" class="uylar-container"></div>
-
-    <!-- Katta card: uyni bosganda chiqadi -->
-    <div id="uyDetailsContainer"></div>
-</section>
-
-<!-- Statistika -->
-<section id="statistika">
-    <h1>Statistika</h1>
-    <div class="charts">
-        <canvas id="ekinChart" width="250" height="250"></canvas>
-        <canvas id="holatChart"></canvas>
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#qishloq">Qishloq haqida</a></li>
+                <li><a href="#kochalar">Mahallalar</a></li>
+                <li><a href="#statistika">Statistika</a></li>
+            </ul>
+        </nav>
     </div>
-</section>
 
-<script>
+    
+
+    <div class="main-content" >
+        <section id="qishloq" class="info-card">
+            <h1>Beshtol Qishlog‘i haqida</h1>
+            <p><strong>Joylashuvi:</strong> Andijon viloyat, Jalaqduquq tumani,</p>
+            <p><strong>Umumiy maydon:</strong> 1500 gektar</p>
+            <p><strong>Fermerlar soni:</strong> 10 ta</p>
+            <p><strong>Xonadonlar soni:</strong> 20 ta</p>
+        </section>
+        
+        <!-- Ko‘chalar -->
+        <section id="kochalar">
+            <h1>Mahallalar</h1>
+            <div class="kochalar-container" id="kochalarContainer"></div>
+        
+            <!-- Uylar ro‘yxati chiqadigan joy -->
+            <div id="uylarContainer" class="uylar-container"></div>
+        
+            <!-- Katta card: uyni bosganda chiqadi -->
+            <div id="uyDetailsContainer"></div>
+        </section>
+        
+        <!-- Statistika -->
+        <section id="statistika">
+            <h1>Statistika</h1>
+            <div class="charts">
+                <canvas id="ekinChart" width="250" height="250"></canvas>
+                <canvas id="holatChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
         // Mahallalar va uylar
     const kochalar = [
-    "Navbahor", "Guliston", "Yoshlik", "Paxtakor", "Do‘stlik",
+    "Beshtol", "Guliston", "Yoshlik", "Paxtakor", "Do‘stlik",
     "Bog‘bon", "G‘alaba", "Beshkapa", "Qo‘rg‘on", "Taraqqiyot"
     ];
 
@@ -234,8 +305,8 @@
         <div class="uy-card">
         <div class="uy-info">
             <h3>${kocha} ${uy}-uy</h3>
-            <p><strong>Holat:</strong> Yaxshi</p>
-            <p><strong>Elektr:</strong> Bor</p>
+            <p><strong>Holati:</strong> Yaxshi</p>
+            <p><strong>Issiqhona:</strong> Bor</p>
             <p><strong>Suv:</strong> Mavjud</p>
             <p><strong>Internet:</strong> Cheklangan</p>
         </div>
@@ -253,10 +324,10 @@
     // 4. Slayder rasm generator
     function generateImages(id) {
     return `
-        <img src="https://picsum.photos/seed/${id}1/400/300" class="active" id="img-${id}-0">
-        <img src="https://picsum.photos/seed/${id}2/400/300" id="img-${id}-1">
-        <img src="https://picsum.photos/seed/${id}3/400/300" id="img-${id}-2">
-        <img src="https://picsum.photos/seed/${id}4/400/300" id="img-${id}-3">
+        <img src="https://frankfurt.apollo.olxcdn.com/v1/files/56l55rwhdnt32-UZ/image" class="active" id="img-${id}-0">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs-C6FXi5et_SYlUSK3AovijUoUJlIafyzjcJqQRzM7W3UC17s1-RrRjFZC4qivby841Q&usqp=CAU" id="img-${id}-1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQupA4fQiGlNvbhhegCHi_CtVBSqWAcS5ORMw&s" id="img-${id}-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfocFkaykl-yZYGHEQNgV3Ydi47dRdXaAWQ&s" id="img-${id}-3">
     `;
     }
     function generateButtons(id) {
