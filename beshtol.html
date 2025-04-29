@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beshtol Qishlog‘i - Uylar Tahlili</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+            /* Umumiy */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+    body {
+    background: #f5f5f5;
+    color: #333;
+    }
+    nav {
+    background: #2E7D32;
+    padding: 15px;
+    }
+    nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    }
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    }
+    nav ul li a:hover {
+    color: #A5D6A7;
+    }
+    section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    }
+    h1 {
+    color: #2E7D32;
+    margin-bottom: 20px;
+    }
+
+    /* Mahalla ro'yxati */
+    .kochalar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    }
+    .kocha-btn {
+    background: #388E3C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    }
+    .kocha-btn:hover {
+    background: #1B5E20;
+    }
+
+    /* Uylar ro'yxati */
+    .uylar-container {
+    margin-top: 20px;
+    }
+    .uy-btn {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s;
+    }
+    .uy-btn:hover {
+    background: #C8E6C9;
+    }
+
+    /* Katta uy card */
+    .uy-card {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .uy-info {
+    flex: 1;
+    }
+    .uy-slider {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    }
+    .uy-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease;
+    }
+    .uy-slider img.active {
+    left: 0;
+    }
+    .slider-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    }
+    .slider-buttons button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    }
+    .slider-buttons button.active {
+    background: #2E7D32;
+    }
+
+    /* Diagramma */
+    .charts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    }
+    .charts canvas {
+    max-width: 250px;
+    max-height: 250px; /* Bu eng muhimi */
+    height: auto;
+    aspect-ratio: 1/1; /* Kvadrat shaklga majbur qiladi */
+    display: block;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#qishloq">Qishloq haqida</a></li>
+        <li><a href="#kochalar">Ko‘chalar</a></li>
+        <li><a href="#statistika">Statistika</a></li>
+    </ul>
+</nav>
+
+<section id="qishloq">
+    <h1>Beshtol Qishlog‘i haqida</h1>
+    <p><strong>Joylashuvi:</strong> Samarqand viloyati, Paxtachi tumani</p>
+    <p><strong>Umumiy maydon:</strong> 1500 gektar</p>
+    <p><strong>Fermerlar soni:</strong> 10 ta</p>
+    <p><strong>Xonadonlar soni:</strong> 20 ta</p>
+</section>
+
+<!-- Ko‘chalar -->
+<section id="kochalar">
+    <h1>Mahallalar</h1>
+    <div class="kochalar-container" id="kochalarContainer"></div>
+
+    <!-- Uylar ro‘yxati chiqadigan joy -->
+    <div id="uylarContainer" class="uylar-container"></div>
+
+    <!-- Katta card: uyni bosganda chiqadi -->
+    <div id="uyDetailsContainer"></div>
+</section>
+
+<!-- Statistika -->
+<section id="statistika">
+    <h1>Statistika</h1>
+    <div class="charts">
+        <canvas id="ekinChart" width="250" height="250"></canvas>
+        <canvas id="holatChart"></canvas>
+    </div>
+</section>
+
+<script>
+        // Mahallalar va uylar
+    const kochalar = [
+    "Navbahor", "Guliston", "Yoshlik", "Paxtakor", "Do‘stlik",
+    "Bog‘bon", "G‘alaba", "Beshkapa", "Qo‘rg‘on", "Taraqqiyot"
+    ];
+
+    const kochalarContainer = document.getElementById('kochalarContainer');
+    const uylarContainer = document.getElementById('uylarContainer');
+    const uyDetailsContainer = document.getElementById('uyDetailsContainer');
+
+    // 1. Mahallalarni chiqarish
+    kochalar.forEach((kocha, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'kocha-btn';
+    btn.innerText = kocha + " ko‘chasi";
+    btn.onclick = () => showUylar(kocha);
+    kochalarContainer.appendChild(btn);
+    });
+
+    // 2. Uylar chiqarish
+    function showUylar(kocha) {
+    uylarContainer.innerHTML = '';
+    uyDetailsContainer.innerHTML = '';
+    for (let i = 1; i <= 10; i++) {
+        const uyBtn = document.createElement('button');
+        uyBtn.className = 'uy-btn';
+        uyBtn.innerText = `${kocha} ${i}-uy`;
+        uyBtn.onclick = () => showUyCard(kocha, i);
+        uylarContainer.appendChild(uyBtn);
+    }
+    }
+
+    // 3. Katta karta ochish
+    function showUyCard(kocha, uy) {
+    uyDetailsContainer.innerHTML = `
+        <div class="uy-card">
+        <div class="uy-info">
+            <h3>${kocha} ${uy}-uy</h3>
+            <p><strong>Holat:</strong> Yaxshi</p>
+            <p><strong>Elektr:</strong> Bor</p>
+            <p><strong>Suv:</strong> Mavjud</p>
+            <p><strong>Internet:</strong> Cheklangan</p>
+        </div>
+        <div class="uy-slider">
+            ${generateImages(kocha + uy)}
+            <div class="slider-buttons">
+            ${generateButtons(kocha + uy)}
+            </div>
+        </div>
+        </div>
+    `;
+    startSlider(kocha + uy);
+    }
+
+    // 4. Slayder rasm generator
+    function generateImages(id) {
+    return `
+        <img src="https://picsum.photos/seed/${id}1/400/300" class="active" id="img-${id}-0">
+        <img src="https://picsum.photos/seed/${id}2/400/300" id="img-${id}-1">
+        <img src="https://picsum.photos/seed/${id}3/400/300" id="img-${id}-2">
+        <img src="https://picsum.photos/seed/${id}4/400/300" id="img-${id}-3">
+    `;
+    }
+    function generateButtons(id) {
+    let btns = '';
+    for (let i = 0; i < 4; i++) {
+        btns += `<button onclick="changeImage('${id}', ${i})" id="btn-${id}-${i}" ${i === 0 ? 'class="active"' : ''}></button>`;
+    }
+    return btns;
+    }
+    function changeImage(id, index) {
+    for (let i = 0; i < 4; i++) {
+        document.getElementById(`img-${id}-${i}`).classList.remove('active');
+        document.getElementById(`btn-${id}-${i}`).classList.remove('active');
+    }
+    document.getElementById(`img-${id}-${index}`).classList.add('active');
+    document.getElementById(`btn-${id}-${index}`).classList.add('active');
+    }
+    function startSlider(id) {
+    let current = 0;
+    setInterval(() => {
+        current = (current + 1) % 4;
+        changeImage(id, current);
+    }, 2000);
+    }
+
+    // 5. Diagrammalar (mini style)
+    window.onload = () => {
+    new Chart(document.getElementById("ekinChart").getContext("2d"), {
+        type: "pie",
+        data: {
+        labels: ["Bug'doy", "Sabzi", "Kartoshka"],
+        datasets: [{
+            data: [35, 40, 25],
+            backgroundColor: ["#81C784", "#FFD54F", "#4DD0E1"]
+        }]
+        },
+        options: { responsive: true }
+    });
+
+    new Chart(document.getElementById("holatChart").getContext("2d"), {
+        type: "bar",
+        data: {
+        labels: ["Yaxshi", "O‘rta", "Yomon"],
+        datasets: [{
+            label: "Holatlar",
+            data: [8, 2, 0],
+            backgroundColor: ["#66BB6A", "#FFB74D", "#E57373"]
+        }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // bu kerak emas bo‘lishi ham mumkin
+}
+
+    });
+    };
+
+</script>
+</body>
+</html>

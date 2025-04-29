@@ -7,16 +7,19 @@
   <title>Kirish - Agromonitoring</title>
   <style>
     
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("./img/nature.jpg"); /* yoki rasming nomi qanday bo‘lsa */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
 .container {
   background: white;
@@ -28,7 +31,7 @@ body {
 }
 
 input, button {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   margin: 10px 0;
   font-size: 16px;
@@ -51,8 +54,7 @@ button:hover {
 <body>
   <div class="container">
     <h2>Kirish</h2>
-    <input type="text" id="firstName" placeholder="Ism">
-    <input type="text" id="lastName" placeholder="Familya">
+    <input type="text" id="firstName" placeholder="Ism Familya">
     <input type="password" id="password" placeholder="Parol">
     <button onclick="login()">Kirish</button>
   </div>
@@ -60,7 +62,7 @@ button:hover {
     function login() {
   const password = document.getElementById('password').value.trim();
 
-  if (password === "admin123") {
+  if (password === "admin") {
     window.location.href = "admin.html";
   } else {
     window.location.href = "user.html";

@@ -1,228 +1,122 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yashil Makon</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agromonitoringi</title>
+    <link rel="stylesheet" href="./stely.css">
+</head>
 </head>
 <body>
-  <header class="navbar">
     <div class="container">
-      <h1 class="logo">AGROMONITORINGI LOYIHASI</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#loyiha_haqida" class="menu_about">Loyiha</a></li>
-          <li><a href="#features" class="menu_features">Afzalliklar</a></li>
-          <li><a href="#login" class="menu_login">Kirish</a></li>
-          <li>
-            <select id="language-select">
-              <option value="uz">🇺🇿 Uz</option>
-              <option value="ru">🇷🇺 Ru</option>
-              <option value="en">🇬🇧 En</option>
-            </select>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <header>
+            <div class="nav">
+                <a href="#container">Asosiy</a><hr>
+                <a href="#haqimizda">Afzalliklar</a><hr>
+                <a href="login.html">Kirish</a><hr>
+                <a href="#">Ro`yhatdan o`tish</a><hr>
+                <a href="#murojaat">Biz bilan bog`lanish</a>
+            </div>
+        </header>
 
-  <section class="hero">
-
-    <div class="container">
-      <h2 class="hero_title">Kelajak uchun yashil iz qoldiraylik</h2>
-      <p class="hero_subtitle">"Yashil Makon" — har bir xonadonning ekologik hissasi endi raqamli nazoratda.</p>
-      <a href="/login.html" class="btn-primary hero_start">Boshlash</a>
-    </div>
-  </section>
-
-  <div class="wave-container">
-    <svg class="wave1" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#4CAF50" d="M0,192L60,186.7C120,181,240,171,360,154.7C480,139,600,117,720,117.3C840,117,960,139,1080,149.3C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
-    </svg>
-    <!-- <svg class="wave2" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#fff700" d="M0,96L80,122.7C160,149,320,203,480,197.3C640,192,800,128,960,128C1120,128,1280,192,1360,224L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"/>
-    </svg> -->
-    <svg class="wave3" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#fff700" d="M0,64L60,74.7C120,85,240,107,360,117.3C480,128,600,128,720,144C840,160,960,192,1080,186.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
-    </svg>
-</div>
-
-  <section style="padding: 60px 20px; background-color: #f8f9fc;">
-    <div class="about-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(50px); transition: all 1s ease;">
-      
-      <!-- Rasm qismi -->
-      <div style="flex: 1; min-width: 300px; padding: 20px;">
-        <img src="your-image-path.jpg" alt="Smart Agro" style="width: 100%; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-      </div>
-  
-      <!-- Matn qismi -->
-      <div style="flex: 1; min-width: 300px; padding: 20px;">
-        <h4 style="color: #003366; font-weight: 600; margin-bottom: 10px;">Biz haqimizda</h4>
-        <h2 style="color: #00aa00; font-weight: 700; font-size: 32px; margin-bottom: 20px;">SMART-AGRO.UZ</h2>
-        <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
-          Zamonaviy qishloq xo‘jaligini boshqarish uchun xizmat qiladi.
-          Bizning onlayn platformamiz sohalarni avtomatlashtirilgan holda boshqarish uchun mo‘ljallangan va bir vaqtning o‘zida bir necha sohalarni qamrab olish imkonini mavjud.
-        </p>
-        <a href="#about" style="display: inline-block; background-color: #00cc00; color: white; padding: 12px 30px; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 16px;">
-          Batafsil
-        </a>
-      </div>
-  
-    </div>
-  </section>
-
-
-  <section style="padding: 60px 20px; background-color: #ffffff; text-align: center;">
-    <h2 style="color: #00723f; font-weight: 700; margin-bottom: 10px;">Afzalliklar</h2>
-    <p style="color: #004225; font-size: 18px; max-width: 800px; margin: 0 auto 50px;">
-      Quyidagi afzalliklar platformamizni yanada samarali va qulay qiladi:
-    </p>
-  
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-      
-      <!-- Card 1 -->
-      <div class="circle-card">
-        <div class="circle-image" style="background-image: url('your-image-1.jpg');">
-          <div class="overlay"></div>
+    <section>
+        <div class="botanic">
+            
+            <div class="shadow"> </div>
+            <div class="text">
+                <h1 class="animate__animated animate__slideOutUp my-element">Agromonitoringi loyihasi</h1>
+                <p>Bu Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ducimus tenetur, quos possimus ipsa sunt!</p>
+            </div>
         </div>
-        <h4>✨ Har bir foydalanuvchi o‘z ma’lumotini mustaqil kiritadi</h4>
-      </div>
-  
-      <!-- Card 2 -->
-      <div class="circle-card">
-        <div class="circle-image" style="background-image: url('your-image-2.jpg');">
-          <div class="overlay"></div>
+        <div class="log">
+            <a href="https://www.facebook.com/" target="_blank"><img src="/img/image copy 2.png" alt="" id="fec"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/img/image copy 3.png" alt=""></a>
+            <a href="https://x.com/" target="_blank"><img src="/img/image copy 4.png" alt=""></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="/img/image copy 5.png" alt=""></a>
         </div>
-        <h4>🔍 Hokim va raislar real vaqtda kuzatadi</h4>
-      </div>
-  
-      <!-- Card 3 -->
-      <div class="circle-card">
-        <div class="circle-image" style="background-image: url('your-image-3.jpg');">
-          <div class="overlay"></div>
-        </div>
-        <h4>📊 Statistika va hisobotlar avtomatik shakllanadi</h4>
-      </div>
-  
-      <!-- Card 4 -->
-      <div class="circle-card">
-        <div class="circle-image" style="background-image: url('your-image-4.jpg');">
-          <div class="overlay"></div>
-        </div>
-        <h4>🌳 Rasmlar, xarita, GPS joylashuv</h4>
-      </div>
-  
-    </div>
-  </section>
-  
+    </section>
 
-  <style>
-    .circle-card {
-      width: 250px;
-      text-align: center;
-      transition: transform 0.4s;
-    }
-  
-    .circle-card:hover {
-      transform: translateY(-10px);
-    }
-  
-    .circle-image {
-      width: 250px;
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: 5px solid #00723f;
-      margin-bottom: 15px;
-      position: relative;
-      overflow: hidden;
-    }
-  
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
-      border-radius: 50%;
-    }
-  
-    .circle-card h4 {
-      margin: 0;
-      color: #003820;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 1.4;
-      padding: 0 10px;
-    }
-  
-    @media (max-width: 768px) {
-      .circle-card {
-        width: 200px;
-      }
-      .circle-image {
-        width: 200px;
-        height: 200px;
-      }
-    }
-  </style>
-  
+    <footer>
+        <div class="foot">
+            <div class="subs">
+                <p>Agromonitoringi. Barcha huquqlar himoyalangan!</p>
+                <input type="email" name="" id="" placeholder="Email manzilingizni kiriting..">
+                <button onclick="" class="buton">Bizni ijtimoiy tarmoqlarda kuzating.</button>
+            </div>
+            <div class="subs">
+                <p>Obuna bo`lish</p>
+                <div class="logo">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="./img/image copy 2.png" alt=""></a>
+                    <a href="https://about.gitlab.com/" target="_blank"><img src="./img/image copy 9.png" alt=""></a>
+                    <a href="https://github.com/" target="_blank"><img src="./img/image copy 6.png" alt=""></a>
+                    <a href="https://telegram.org/" target="_blank"><img src="./img/image copy 7.png" alt=""></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="./img/image copy 3.png" alt=""></a>
+                    <a href="https://www.figma.com/files/team/1427874831178035239/recents-and-sharing?fuid=1427874829154370319" target="_blank"><img src="./img/image copy 8.png" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="end">
+            <div class="term">
+                <ul>
+                    <li>Maxfiylik siyosati</li>
+                    <li>Foydalanish shartlari</li>
+                    <li>Ma'lumotlarni yangilash va qaytarish siyosati</li>
+                    <li>Huquqiy ma'lumotlar</li>
+                    <li>Sayt xaritasi</li>
+                </ul>
+            </div>
+            <span>© 2024 AgroMonitoring. Barcha huquqlar himoyalangan./span>
+        </div>
+    </footer>
 
 
-  <section style="padding: 60px 20px; background-color: #f8f9fc;">
+<section id="murojaat" style="padding: 60px 20px; background-color: #f8f9fc;">
     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto;">
-  
-      <!-- Form qismi -->
-      <div style="flex: 1; min-width: 300px; padding: 20px;">
+    
+        <!-- Form qismi -->
+        <div style="flex: 1; min-width: 300px; padding: 20px;">
         <h2 style="color: #000; font-weight: 700; margin-bottom: 20px;">Savollaringiz bo‘lsa bizga murojaat qilishingiz mumkin</h2>
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
-          <div style="display: flex; gap: 10px;">
+            <div style="display: flex; gap: 10px;">
             <div style="position: relative; flex: 1;">
-              <input type="text" placeholder="Ismingiz" style="padding: 10px 10px 10px 35px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
-              <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;">👤</span>
+                <input type="text" placeholder="Ismingiz" style="padding: 10px 10px 10px 35px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+                <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;">👤</span>
             </div>
             <div style="position: relative; flex: 1;">
-              <input type="text" placeholder="+998(***) *** ** **" style="padding: 10px 10px 10px 35px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
-              <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;">📞</span>
+                <input type="text" placeholder="+998(***) *** ** **" style="padding: 10px 10px 10px 35px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+                <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;">📞</span>
             </div>
-          </div>
-  
-          <div style="position: relative;">
+            </div>
+    
+            <div style="position: relative;">
             <select style="padding: 10px 10px 10px 35px; width: 100%; border: 1px solid #ccc; border-radius: 8px;">
-              <option selected>Ташкилотлар</option>
-              <option>Hokimiyat</option>
-              <option>Tadbirkor</option>
-              <option>Fermer xo‘jaligi</option>
+                <option selected>Ташкилотлар</option>
+                <option>Hokimiyat</option>
+                <option>Tadbirkor</option>
+                <option>Fermer xo‘jaligi</option>
             </select>
             <span style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;">🏢</span>
-          </div>
-  
-          <textarea placeholder="Xabar matni" style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; resize: vertical; min-height: 100px;"></textarea>
-  
-          <button id="submit-btn" type="submit" style="background-color: #00cc00; color: white; padding: 12px 30px; border: none; border-radius: 30px; font-weight: 600; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+            </div>
+    
+            <textarea placeholder="Xabar matni" style="padding: 10px; border: 1px solid #ccc; border-radius: 8px; resize: vertical; min-height: 100px;"></textarea>
+    
+            <button id="submit-btn" type="submit" style="background-color: #00cc00; color: white; padding: 12px 30px; border: none; border-radius: 30px; font-weight: 600; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
             Jo‘natish
-          </button>
+            </button>
         </form>
-      </div>
-  
-      <!-- Rasm qismi -->
-      <div style="flex: 1; min-width: 300px; padding: 20px;">
+        </div>
+    
+        <!-- Rasm qismi -->
+        <div style="flex: 1; min-width: 300px; padding: 20px;">
         <img src="your-image-path.jpg" alt="Contact Us" style="width: 100%; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-      </div>
-  
+        </div>
+    
     </div>
-  </section>
+</section>
+    
 
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 <span class="footer_text">Yashil Makon. Barcha huquqlar himoyalangan.</span></p>
     </div>
-  </footer>
+    <script src="./app.js"></script>
 </body>
 </html>
