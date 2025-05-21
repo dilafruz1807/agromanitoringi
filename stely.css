@@ -32,6 +32,15 @@
   color: white;
   margin: 0px 31px;
 }
+
+.container header .nav a :hover{
+  font-size: 24px;
+  color: aliceblue;
+  margin: 0px 31px;
+  border: 25px;
+
+}
+
 .container section {
   margin-bottom: 200px;
 }

@@ -1,0 +1,299 @@
+<!-- dashboard.html (Statistika Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Agromonitoringi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard-specific.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="flex h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <div class="hidden md-flex w-64 flex-col bg-gradient-to-b from-green-800 to-green-900 text-white">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold">Agromonitoring</h2>
+                <p class="text-green-300 text-sm">Admin Dashboard</p>
+            </div>
+            <nav class="flex-1 px-4 pb-4">
+                <div class="mb-6">
+                    <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2 pl-4">Asosiy</p>
+                    <a href="dashboard.html" class="flex items-center px-4 py-3 text-white rounded-lg bg-green-700 mb-1">
+                        <i class="fas fa-chart-bar mr-3"></i>
+                        Statistika
+                    </a>
+                    <a href="dashboard-products.html" class="flex items-center px-4 py-3 text-green-100 hover-bg-green-700-50 rounded-lg transition-colors mb-1">
+                        <i class="fas fa-layer-group mr-3"></i>
+                        Mahsulotlar
+                    </a>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2 pl-4">Sozlamalar</p>
+                    <a href="dashboard-settings.html" class="flex items-center px-4 py-3 text-green-100 hover-bg-green-700-50 rounded-lg transition-colors mb-1">
+                        <i class="fas fa-cog mr-3"></i>
+                        Sozlamalar
+                    </a>
+                    <a href="index.html" class="flex items-center px-4 py-3 text-green-100 hover-bg-green-700-50 rounded-lg transition-colors mb-1">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Chiqish
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile sidebar toggle -->
+        <div class="md-hidden fixed bottom-6 right-6 z-40">
+            <button id="sidebarToggle" class="h-14 w-14 rounded-full bg-green-600 hover-bg-green-700 shadow-lg flex items-center justify-center text-white">
+                <i class="fas fa-bars h-6 w-6"></i>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white border-b border-gray-200 py-4 px-6 flex justify-between items-center">
+                <div class="flex items-center">
+                    <button class="md-hidden mr-4 text-gray-600">
+                        <i class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                    <div class="relative w-64">
+                        <input type="text" placeholder="Qishloqni izlash..." class="pl-10 pr-4 py-2 rounded-full border-gray-300 focus-border-green-500 focus-ring-green-500 w-full">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4"></i>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="relative text-gray-600">
+                        <i class="fas fa-bell h-5 w-5"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <div class="dropdown">
+                        <button class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                <span class="font-medium text-green-700">A</span>
+                            </div>
+                            <div class="hidden md-block text-left">
+                                <p class="text-sm font-medium">Admin User</p>
+                                <p class="text-xs text-gray-500">admin@example.com</p>
+                            </div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-user mr-2"></i> Profile</a>
+                            <a href="#"><i class="fas fa-cog mr-2"></i> Settings</a>
+                            <a href="index.html"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="flex-1 overflow-auto p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 gap-6 mb-8">
+                    <div class="card border-none shadow-md">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Jami fermerlar</p>
+                                    <p class="text-2xl font-bold mt-1">1,248</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+12.5%</span>
+                                        <span class="text-xs text-gray-500 ml-2">O'tgan oydan</span>
+                                    </div>
+                                </div>
+                                <div class="bg-green-100 p-3 rounded-lg">
+                                    <i class="fas fa-users text-green-600 h-6 w-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-none shadow-md">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Jami maydon</p>
+                                    <p class="text-2xl font-bold mt-1">15,742 gektar</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+2.3%</span>
+                                        <span class="text-xs text-gray-500 ml-2">O'tgan oydan</span>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-100 p-3 rounded-lg">
+                                    <i class="fas fa-map text-blue-600 h-6 w-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-none shadow-md">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Jami xonadonlar</p>
+                                    <p class="text-2xl font-bold mt-1">8,521</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+5.2%</span>
+                                        <span class="text-xs text-gray-500 ml-2">O'tgan oydan</span>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-100 p-3 rounded-lg">
+                                    <i class="fas fa-home text-purple-600 h-6 w-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-none shadow-md">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Yaxshi holat</p>
+                                    <p class="text-2xl font-bold mt-1">78%</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-0.5 rounded-full">+3.1%</span>
+                                        <span class="text-xs text-gray-500 ml-2">O'tgan oydan</span>
+                                    </div>
+                                </div>
+                                <div class="bg-amber-100 p-3 rounded-lg">
+                                    <i class="fas fa-check-circle text-amber-600 h-6 w-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="card border-none shadow-md overflow-hidden">
+                    <div class="bg-white px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                        <h2 class="text-lg font-semibold text-gray-800">Qishloqlar ro'yxati</h2>
+                        <button class="btn btn-sm btn-primary">Yangi qo'shish</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="text-left py-4 px-6 font-medium text-gray-500 text-sm">Qishloq</th>
+                                    <th class="text-left py-4 px-6 font-medium text-gray-500 text-sm">Fermerlar</th>
+                                    <th class="text-left py-4 px-6 font-medium text-gray-500 text-sm">Xonadonlar</th>
+                                    <th class="text-left py-4 px-6 font-medium text-gray-500 text-sm">Umumiy Maydon</th>
+                                    <th class="text-left py-4 px-6 font-medium text-gray-500 text-sm">Holat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-100 hover-bg-gray-50 transition-colors">
+                                    <td class="py-4 px-6">
+                                        <a href="dashboard-farm-detail.html?id=1" class="text-blue-600 hover-text-blue-800 font-medium flex items-center">
+                                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-3 font-bold">B</span>
+                                            Beshtol
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-6">10</td>
+                                    <td class="py-4 px-6">1000</td>
+                                    <td class="py-4 px-6">20 gektar</td>
+                                    <td class="py-4 px-6">
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Yaxshi</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-100 hover-bg-gray-50 transition-colors">
+                                    <td class="py-4 px-6">
+                                        <a href="dashboard-farm-detail.html?id=2" class="text-blue-600 hover-text-blue-800 font-medium flex items-center">
+                                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-3 font-bold">J</span>
+                                            JANUBIY OLAMUSHUK
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-6">10</td>
+                                    <td class="py-4 px-6">1200</td>
+                                    <td class="py-4 px-6">16 gektar</td>
+                                    <td class="py-4 px-6">
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Yaxshi</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-100 hover-bg-gray-50 transition-colors">
+                                    <td class="py-4 px-6">
+                                        <a href="dashboard-farm-detail.html?id=3" class="text-blue-600 hover-text-blue-800 font-medium flex items-center">
+                                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-3 font-bold">Q</span>
+                                            QO'SHTEPA
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-6">15</td>
+                                    <td class="py-4 px-6">1750</td>
+                                    <td class="py-4 px-6">12 gektar</td>
+                                    <td class="py-4 px-6">
+                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Qoniqarli</span>
+                                    </td>
+                                </tr>
+                                <!-- More rows would go here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-white px-6 py-4 border-t border-gray-100 flex justify-between items-center">
+                        <p class="text-sm text-gray-500">Jami 10 ta qishloq</p>
+                        <div class="flex items-center space-x-2">
+                            <button class="btn btn-outline btn-sm" disabled>Oldingi</button>
+                            <button class="btn btn-outline btn-sm bg-gray-100">1</button>
+                            <button class="btn btn-outline btn-sm">2</button>
+                            <button class="btn btn-outline btn-sm">Keyingi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar (hidden by default) -->
+    <div id="mobileSidebar" class="fixed inset-0 z-50 hidden">
+        <div class="fixed inset-0 bg-black-50" onclick="closeMobileSidebar()"></div>
+        <div class="fixed inset-y-0 left-0 w-full max-w-xs bg-gradient-to-b from-green-800 to-green-900 text-white p-6 overflow-y-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold">Agromonitoring</h2>
+                <button onclick="closeMobileSidebar()">
+                    <i class="fas fa-times h-6 w-6 text-white"></i>
+                </button>
+            </div>
+
+            <nav class="space-y-6">
+                <div>
+                    <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4">Asosiy</p>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="dashboard.html" class="flex items-center px-4 py-3 rounded-lg bg-green-700">
+                                <i class="fas fa-chart-bar mr-3"></i>
+                                Statistika
+                            </a>
+                        </li>
+                        <li>
+                            <a href="dashboard-products.html" class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50">
+                                <i class="fas fa-layer-group mr-3"></i>
+                                Mahsulotlar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4">Sozlamalar</p>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="dashboard-settings.html" class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50">
+                                <i class="fas fa-cog mr-3"></i>
+                                Sozlamalar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="flex items-center px-4 py-3 hover-bg-green-700-50 rounded-lg">
+                                <i class="fas fa-sign-out-alt mr-3"></i>
+                                Chiqish
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
