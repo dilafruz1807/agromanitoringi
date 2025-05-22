@@ -234,484 +234,229 @@
 
           <!-- Tabs -->
           <div class="space-y-6">
-            <div class="bg-white p-1 rounded-lg shadow-sm inline-block">
-              <div class="flex space-x-2">
-                <button
-                  class="tab-trigger active px-4 py-2 rounded-md"
-                  data-tab="overview"
-                >
-                  Overview
-                </button>
-                <button
-                  class="tab-trigger px-4 py-2 rounded-md"
-                  data-tab="crops"
-                >
-                  Crops
-                </button>
-                <button
-                  class="tab-trigger px-4 py-2 rounded-md"
-                  data-tab="farmers"
-                >
-                  Farmers
-                </button>
-                <button
-                  class="tab-trigger px-4 py-2 rounded-md"
-                  data-tab="reports"
-                >
-                  Reports
-                </button>
-              </div>
-            </div>
+  <div class="bg-white p-1 rounded-lg shadow-sm inline-block">
+    <div class="flex space-x-2">
+      <button class="tab-trigger active px-4 py-2 rounded-md" data-tab="overview">
+        Umumiy ko'rinish
+      </button>
+      <button class="tab-trigger px-4 py-2 rounded-md" data-tab="crops">
+        Ekinlar
+      </button>
+      <button class="tab-trigger px-4 py-2 rounded-md" data-tab="farmers">
+        Fermerlar
+      </button>
+      <button class="tab-trigger px-4 py-2 rounded-md" data-tab="reports">
+        Hisobotlar
+      </button>
+    </div>
+  </div>
 
-            <div id="overview" class="tab-content space-y-6">
-              <div class="card border-none shadow-md">
-                <div class="p-6">
-                  <h2 class="text-xl font-bold mb-2">Farm Summary</h2>
-                  <p class="text-gray-600 mb-4">
-                    Overview of farm activities and statistics
-                  </p>
-                  <div class="grid grid-cols-1 md-grid-cols-2 gap-8">
-                    <div class="space-y-6">
-                      <div>
-                        <h3 class="font-medium mb-4 text-gray-800">
-                          Farm Information
-                        </h3>
-                        <div class="space-y-3">
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Location:</span>
-                            <span class="font-medium">Eastern Region</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Established:</span>
-                            <span class="font-medium">2005</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Main Crops:</span>
-                            <span class="font-medium">Cotton, Wheat</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Water Source:</span>
-                            <span class="font-medium">River, Wells</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div
-                        class="bg-blue-50 p-4 rounded-lg border border-blue-100"
-                      >
-                        <div class="flex items-start">
-                          <div class="bg-blue-100 p-2 rounded-md mr-4">
-                            <i class="fas fa-info-circle text-blue-700"></i>
-                          </div>
-                          <div>
-                            <h4 class="font-medium text-blue-800 mb-1">
-                              Soil Analysis Recommended
-                            </h4>
-                            <p class="text-sm text-blue-700">
-                              The last soil analysis was performed over 6 months
-                              ago. A new analysis is recommended for optimal
-                              crop planning.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="space-y-6">
-                      <div>
-                        <h3 class="font-medium mb-4 text-gray-800">
-                          Current Season
-                        </h3>
-                        <div class="space-y-3">
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Planting Date:</span>
-                            <span class="font-medium">March 15, 2023</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Expected Harvest:</span>
-                            <span class="font-medium">September 10, 2023</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600">Yield Forecast:</span>
-                            <span class="font-medium text-green-600">Good</span>
-                          </div>
-                          <div
-                            class="flex justify-between items-center pb-2 border-b border-gray-100"
-                          >
-                            <span class="text-gray-600"
-                              >Weather Conditions:</span
-                            >
-                            <span class="font-medium">Favorable</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div
-                        class="bg-green-50 p-4 rounded-lg border border-green-100"
-                      >
-                        <div class="flex items-start">
-                          <div class="bg-green-100 p-2 rounded-md mr-4">
-                            <i class="fas fa-check-circle text-green-700"></i>
-                          </div>
-                          <div>
-                            <h4 class="font-medium text-green-800 mb-1">
-                              Irrigation System Efficiency
-                            </h4>
-                            <p class="text-sm text-green-700">
-                              The recent irrigation system upgrade has improved
-                              water efficiency by 25%, resulting in significant
-                              resource savings.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  <div id="overview" class="tab-content space-y-6">
+    <div class="card border-none shadow-md">
+      <div class="p-6">
+        <h2 class="text-xl font-bold mb-2">Ferma umumiy ko‘rinishi</h2>
+        <p class="text-gray-600 mb-4">
+          Ferma faoliyati va statistikasi haqida umumiy ma’lumot
+        </p>
+        <div class="grid grid-cols-1 md-grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-medium mb-4 text-gray-800">Ferma haqida ma’lumot</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Joylashuv:</span>
+                  <span class="font-medium">Sharqiy hudud</span>
                 </div>
-              </div>
-
-              <div class="card border-none shadow-md">
-                <div class="p-6">
-                  <h2 class="text-xl font-bold mb-2">Recent Activities</h2>
-                  <p class="text-gray-600 mb-4">
-                    Latest activities and updates from the farm
-                  </p>
-                  <div class="space-y-4">
-                    <div
-                      class="flex items-start gap-4 pb-4 border-b border-gray-100"
-                    >
-                      <div class="w-2 h-2 mt-2 rounded-full bg-blue-500"></div>
-                      <div>
-                        <p class="font-medium">Irrigation System Updated</p>
-                        <p class="text-sm text-gray-600">
-                          The irrigation system has been updated to improve
-                          water efficiency.
-                        </p>
-                        <p class="text-xs text-gray-500 mt-1">
-                          Today, 10:30 AM
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-4 pb-4 border-b border-gray-100"
-                    >
-                      <div class="w-2 h-2 mt-2 rounded-full bg-red-500"></div>
-                      <div>
-                        <p class="font-medium">Pest Alert</p>
-                        <p class="text-sm text-gray-600">
-                          Potential pest infestation detected in the eastern
-                          fields.
-                        </p>
-                        <p class="text-xs text-gray-500 mt-1">
-                          Yesterday, 2:15 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-4 pb-4 border-b border-gray-100"
-                    >
-                      <div class="w-2 h-2 mt-2 rounded-full bg-green-500"></div>
-                      <div>
-                        <p class="font-medium">Harvest Completed</p>
-                        <p class="text-sm text-gray-600">
-                          The wheat harvest has been successfully completed with
-                          above-average yield.
-                        </p>
-                        <p class="text-xs text-gray-500 mt-1">May 15, 2023</p>
-                      </div>
-                    </div>
-                  </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Tashkil topgan yil:</span>
+                  <span class="font-medium">2005</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Asosiy ekinlar:</span>
+                  <span class="font-medium">Paxta, Bug‘doy</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Suv manbasi:</span>
+                  <span class="font-medium">Daryo, Quduqlar</span>
                 </div>
               </div>
             </div>
 
-            <div id="crops" class="tab-content hidden">
-              <div class="card border-none shadow-md">
-                <div class="p-6">
-                  <h2 class="text-xl font-bold mb-2">Crop Information</h2>
-                  <p class="text-gray-600 mb-4">
-                    Details about crops planted in the farm
-                  </p>
-                  <div class="overflow-x-auto">
-                    <table class="w-full">
-                      <thead>
-                        <tr class="bg-gray-50">
-                          <th
-                            class="text-left py-3 px-4 font-medium text-gray-500 text-sm"
-                          >
-                            Crop
-                          </th>
-                          <th
-                            class="text-left py-3 px-4 font-medium text-gray-500 text-sm"
-                          >
-                            Area (gektar)
-                          </th>
-                          <th
-                            class="text-left py-3 px-4 font-medium text-gray-500 text-sm"
-                          >
-                            Planting Date
-                          </th>
-                          <th
-                            class="text-left py-3 px-4 font-medium text-gray-500 text-sm"
-                          >
-                            Expected Harvest
-                          </th>
-                          <th
-                            class="text-left py-3 px-4 font-medium text-gray-500 text-sm"
-                          >
-                            Status
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="border-b border-gray-100">
-                          <td class="py-3 px-4">Wheat</td>
-                          <td class="py-3 px-4">8</td>
-                          <td class="py-3 px-4">March 10, 2023</td>
-                          <td class="py-3 px-4">August 15, 2023</td>
-                          <td class="py-3 px-4">
-                            <span
-                              class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
-                              >Growing</span
-                            >
-                          </td>
-                        </tr>
-                        <tr class="border-b border-gray-100">
-                          <td class="py-3 px-4">Cotton</td>
-                          <td class="py-3 px-4">12</td>
-                          <td class="py-3 px-4">April 5, 2023</td>
-                          <td class="py-3 px-4">September 20, 2023</td>
-                          <td class="py-3 px-4">
-                            <span
-                              class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800"
-                              >Growing</span
-                            >
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-2 rounded-md mr-4">
+                  <i class="fas fa-info-circle text-blue-700"></i>
                 </div>
-              </div>
-            </div>
-
-            <div id="farmers" class="tab-content hidden">
-              <div class="card border-none shadow-md">
-                <div class="p-6">
-                  <h2 class="text-xl font-bold mb-2">Farmer Directory</h2>
-                  <p class="text-gray-600 mb-4">
-                    List of farmers working in the farm
+                <div>
+                  <h4 class="font-medium text-blue-800 mb-1">Tuproq tahlili tavsiya etiladi</h4>
+                  <p class="text-sm text-blue-700">
+                    Oxirgi tuproq tahlili 6 oy oldin o‘tkazilgan. Optimal rejalashtirish uchun yangi tahlil tavsiya qilinadi.
                   </p>
-                  <div
-                    class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-3 gap-4"
-                  >
-                    <div
-                      class="bg-white p-4 rounded-lg border border-gray-100 hover-shadow-md transition-shadow"
-                    >
-                      <div class="flex items-center mb-3">
-                        <div
-                          class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3"
-                        >
-                          <span class="font-medium text-green-700">F1</span>
-                        </div>
-                        <div>
-                          <h4 class="font-medium">Farmer 1</h4>
-                          <p class="text-sm text-gray-500">ID: F001</p>
-                        </div>
-                      </div>
-                      <div class="space-y-1 text-sm">
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Area:</span>
-                          <span>3 gektar</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Crops:</span>
-                          <span>Wheat, Cotton</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Phone:</span>
-                          <span>+998 90 123 4567</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="bg-white p-4 rounded-lg border border-gray-100 hover-shadow-md transition-shadow"
-                    >
-                      <div class="flex items-center mb-3">
-                        <div
-                          class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3"
-                        >
-                          <span class="font-medium text-green-700">F2</span>
-                        </div>
-                        <div>
-                          <h4 class="font-medium">Farmer 2</h4>
-                          <p class="text-sm text-gray-500">ID: F002</p>
-                        </div>
-                      </div>
-                      <div class="space-y-1 text-sm">
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Area:</span>
-                          <span>2 gektar</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Crops:</span>
-                          <span>Cotton</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-500">Phone:</span>
-                          <span>+998 91 234 5678</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="reports" class="tab-content hidden">
-              <div class="card border-none shadow-md">
-                <div class="p-6">
-                  <h2 class="text-xl font-bold mb-2">Reports</h2>
-                  <p class="text-gray-600 mb-4">
-                    Monthly and annual reports for the farm
-                  </p>
-                  <div class="space-y-4">
-                    <div
-                      class="bg-white p-4 rounded-lg border border-gray-100 hover-shadow-md transition-shadow"
-                    >
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                          <div class="bg-blue-100 p-2 rounded-md mr-4">
-                            <i class="fas fa-file-alt text-blue-700"></i>
-                          </div>
-                          <div>
-                            <h4 class="font-medium">May 2023 Monthly Report</h4>
-                            <p class="text-sm text-gray-500">
-                              Generated on June 1, 2023
-                            </p>
-                          </div>
-                        </div>
-                        <button class="btn btn-outline btn-sm">Download</button>
-                      </div>
-                    </div>
-                    <div
-                      class="bg-white p-4 rounded-lg border border-gray-100 hover-shadow-md transition-shadow"
-                    >
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                          <div class="bg-blue-100 p-2 rounded-md mr-4">
-                            <i class="fas fa-file-alt text-blue-700"></i>
-                          </div>
-                          <div>
-                            <h4 class="font-medium">
-                              April 2023 Monthly Report
-                            </h4>
-                            <p class="text-sm text-gray-500">
-                              Generated on May 1, 2023
-                            </p>
-                          </div>
-                        </div>
-                        <button class="btn btn-outline btn-sm">Download</button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-medium mb-4 text-gray-800">Joriy mavsum</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Ekilgan sana:</span>
+                  <span class="font-medium">15 Mart, 2023</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Kutilayotgan hosil vaqti:</span>
+                  <span class="font-medium">10 Sentabr, 2023</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Hosildorlik prognozi:</span>
+                  <span class="font-medium text-green-600">Yaxshi</span>
+                </div>
+                <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                  <span class="text-gray-600">Ob-havo sharoiti:</span>
+                  <span class="font-medium">Qulay</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+              <div class="flex items-start">
+                <div class="bg-green-100 p-2 rounded-md mr-4">
+                  <i class="fas fa-check-circle text-green-700"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-green-800 mb-1">Sug‘orish tizimi samaradorligi</h4>
+                  <p class="text-sm text-green-700">
+                    Yaqinda amalga oshirilgan sug‘orish tizimi yangilanishi suvdan foydalanish samaradorligini 25% ga oshirdi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card border-none shadow-md">
+      <div class="p-6">
+        <h2 class="text-xl font-bold mb-2">So‘nggi faoliyatlar</h2>
+        <p class="text-gray-600 mb-4">Fermadagi so‘nggi faoliyatlar va yangiliklar</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 pb-4 border-b border-gray-100">
+            <div class="w-2 h-2 mt-2 rounded-full bg-blue-500"></div>
+            <div>
+              <p class="font-medium">Sug‘orish tizimi yangilandi</p>
+              <p class="text-sm text-gray-600">
+                Sug‘orish tizimi samaradorlikni oshirish maqsadida yangilandi.
+              </p>
+              <p class="text-xs text-gray-500 mt-1">Bugun, 10:30</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pb-4 border-b border-gray-100">
+            <div class="w-2 h-2 mt-2 rounded-full bg-red-500"></div>
+            <div>
+              <p class="font-medium">Zararkunanda xavfi</p>
+              <p class="text-sm text-gray-600">
+                Sharqiy dalalarda zararkunanda tahdidi aniqlandi.
+              </p>
+              <p class="text-xs text-gray-500 mt-1">Kecha, 14:15</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pb-4 border-b border-gray-100">
+            <div class="w-2 h-2 mt-2 rounded-full bg-green-500"></div>
+            <div>
+              <p class="font-medium">Hosil yig‘imi yakunlandi</p>
+              <p class="text-sm text-gray-600">
+                Bug‘doy hosili muvaffaqiyatli yig‘ib olindi, natijalar o‘rtacha ko‘rsatkichlardan yuqori.
+              </p>
+              <p class="text-xs text-gray-500 mt-1">15 May, 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </div>
 
     <!-- Mobile Sidebar (hidden by default) -->
     <div id="mobileSidebar" class="fixed inset-0 z-50 hidden">
-      <div
-        class="fixed inset-0 bg-black-50"
-        onclick="closeMobileSidebar()"
-      ></div>
-      <div
-        class="fixed inset-y-0 left-0 w-full max-w-xs bg-gradient-to-b from-green-800 to-green-900 text-white p-6 overflow-y-auto"
-      >
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-2xl font-bold">Agromonitoring</h2>
-          <button onclick="closeMobileSidebar()">
-            <i class="fas fa-times h-6 w-6 text-white"></i>
-          </button>
-        </div>
-
-        <nav class="space-y-6">
-          <div>
-            <p
-              class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4"
-            >
-              Asosiy
-            </p>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="dashboard.html"
-                  class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
-                >
-                  <i class="fas fa-chart-bar mr-3"></i>
-                  Statistika
-                </a>
-              </li>
-              <li>
-                <a
-                  href="dashboard-products.html"
-                  class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
-                >
-                  <i class="fas fa-layer-group mr-3"></i>
-                  Mahsulotlar
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p
-              class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4"
-            >
-              Sozlamalar
-            </p>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="dashboard-settings.html"
-                  class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
-                >
-                  <i class="fas fa-cog mr-3"></i>
-                  Sozlamalar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="index.html"
-                  class="flex items-center px-4 py-3 hover-bg-green-700-50 rounded-lg"
-                >
-                  <i class="fas fa-sign-out-alt mr-3"></i>
-                  Chiqish
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+  <div
+    class="fixed inset-0 bg-black-50"
+    onclick="closeMobileSidebar()"
+  ></div>
+  <div
+    class="fixed inset-y-0 left-0 w-full max-w-xs bg-gradient-to-b from-green-800 to-green-900 text-white p-6 overflow-y-auto"
+  >
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold">Agromonitoring</h2>
+      <button onclick="closeMobileSidebar()">
+        <i class="fas fa-times h-6 w-6 text-white"></i>
+      </button>
     </div>
+
+    <nav class="space-y-6">
+      <div>
+        <p
+          class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4"
+        >
+          Asosiy
+        </p>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="dashboard.html"
+              class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
+            >
+              <i class="fas fa-chart-bar mr-3"></i>
+              Statistika
+            </a>
+          </li>
+          <li>
+            <a
+              href="dashboard-products.html"
+              class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
+            >
+              <i class="fas fa-layer-group mr-3"></i>
+              Mahsulotlar
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p
+          class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-3 pl-4"
+        >
+          Sozlamalar
+        </p>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="dashboard-settings.html"
+              class="flex items-center px-4 py-3 rounded-lg hover-bg-green-700-50"
+            >
+              <i class="fas fa-cog mr-3"></i>
+              Sozlamalar
+            </a>
+          </li>
+          <li>
+            <a
+              href="index.html"
+              class="flex items-center px-4 py-3 hover-bg-green-700-50 rounded-lg"
+            >
+              <i class="fas fa-sign-out-alt mr-3"></i>
+              Chiqish
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
 
     <script src="js/dashboard.js"></script>
   </body>
